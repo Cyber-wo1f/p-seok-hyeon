@@ -1,0 +1,416 @@
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #000;
+  flex-direction: column;
+}
+
+/* 상단 헤더 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #222;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;
+  line-height: 30px;
+}
+
+/* 메뉴바 */
+nav {
+  width: 200px;
+  /* min-height: 100vh; */ /* 이 줄을 제거하세요 */
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 60px; /* 헤더 높이 */
+  bottom: 0; /* 뷰포트 하단까지 채움 */
+  z-index: 999;
+  overflow-y: auto; /* 내용이 높이를 초과하면 스크롤 허용 */
+  display: flex;
+  flex-direction: column;
+}
+
+
+nav h2 {
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin-bottom: 15px; /* 메뉴와 플레이어 사이 간격 */
+}
+
+nav ul li {
+  margin: 15px 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* === 뮤직 플레이어 스타일 시작 (개선된 버전) === */
+#music-player {
+  /* margin-top: 20px; /* 위쪽 메뉴와의 간격, ul의 margin-bottom으로 대체 가능 */
+  padding: 15px 10px;
+  border-top: 1px solid #555;
+  text-align: center;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 내부 요소들 간의 간격 */
+  margin-bottom: 20px; /* 다크모드 토글 버튼과의 간격 추가 */
+}
+
+#music-player #song-title {
+  font-size: 0.9em;
+  color: #e0e0e0;
+  word-break: break-all;
+  line-height: 1.3;
+  min-height: 2.6em;
+  font-weight: 500;
+}
+
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: #444;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.progress-bar { /* This can be removed if progress-container directly handles click */
+    width: 100%;
+    height: 100%;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background-color: #68d391;
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.time-container {
+  font-size: 0.75em;
+  color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+.music-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.music-controls button {
+  background-color: transparent;
+  color: #ccc;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.music-controls button:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.music-controls button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+/* === 뮤직 플레이어 스타일 끝 === */
+
+/* 다크모드 토글 버튼 스타일 */
+#toggle-darkmode {
+  padding: 10px 12px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* 본문 콘텐츠 */
+.content {
+  margin-right: 200px;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+/* 섹션 */
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 20px;
+  scroll-margin-top: 60px;
+}
+
+.section-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-wrapper h1,
+.section-wrapper h2,
+.section-wrapper h3,
+.section-wrapper p,
+.section-wrapper form {
+  text-align: left;
+  line-height: 1.8;
+}
+
+/* 홈 섹션 이미지 */
+.pado-image {
+  margin-top: 30px;
+  width: 100%;
+  align-self: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pado-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 프로필 섹션 */
+#profile .section-wrapper.profile-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.profile-text {
+  flex: 1;
+}
+
+.profile-photo {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* 포트폴리오 섹션: 수정됨 */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto); /* 행 높이는 내용에 따라 자동 조절 */
+  gap: 20px;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+.portfolio-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  aspect-ratio: 1 / 1; /* 아이템 전체는 정사각형 유지 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 위에서부터 채우도록 변경 */
+}
+
+.portfolio-item img {
+  width: 100%;
+  flex-grow: 1; /* 이미지가 가능한 수직 공간을 차지하도록 함 */
+  object-fit: cover; /* 이미지를 비율 유지하며 컨테이너에 맞춤 (잘릴 수 있음) */
+  min-height: 0; /* Flex 아이템이 넘치는 것을 방지 (중요!) */
+  border-radius: 8px; /* 이미지 모서리 둥글게 */
+  margin-bottom: 8px; /* 이미지와 텍스트 사이 간격 추가 */
+}
+
+.portfolio-item p {
+  flex-shrink: 0; /* 텍스트 영역이 줄어들지 않도록 함 */
+  font-size: 0.9em;
+  line-height: 1.3;
+  color: #333; /* 텍스트 색상 명시 */
+}
+
+/* 페이지네이션 */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+
+/* 다크모드 */
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark nav {
+  background-color: #1e1e1e;
+}
+
+body.dark nav ul li a {
+  color: #f0f0f0;
+}
+
+/* 다크모드 시 뮤직 플레이어 */
+body.dark #music-player {
+  background-color: #222;
+  border-top-color: #3a3a3a;
+}
+body.dark #music-player #song-title {
+  color: #f0f0f0;
+}
+body.dark .progress-container {
+  background-color: #383838;
+}
+body.dark .progress {
+  background-color: #48bb78;
+}
+body.dark .time-container {
+  color: #bbb;
+}
+body.dark .music-controls button {
+  color: #ddd;
+}
+body.dark .music-controls button:hover {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+
+/* 다크모드 시 토글 버튼 */
+body.dark #toggle-darkmode {
+  background-color: #404040;
+  color: #f0f0f0;
+}
+body.dark #toggle-darkmode:hover {
+  background-color: #5a5a5a;
+}
+
+body.dark .portfolio-item {
+  background-color: #2c2c2c;
+  border-color: #555;
+}
+body.dark .portfolio-item p {
+  color: #e0e0e0; /* 다크모드 시 포트폴리오 텍스트 색상 */
+}
+
+body.dark .pagination button {
+  background-color: #333;
+  color: #eee;
+}
+body.dark .pagination button:hover {
+  background-color: #454545;
+}
+
+body.dark input,
+body.dark textarea {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .content {
+    margin-right: 0;
+  }
+  /* nav 스타일은 데스크탑과 동일하게 유지 또는 필요시 수정 */
+  /* 예: 모바일에서 nav를 숨기고 햄버거 메뉴로 제어하려면 추가 스타일 필요 */
+
+  .section-wrapper {
+    padding: 0 15px;
+  }
+
+  #profile .section-wrapper.profile-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-text {
+    width: 100%;
+    text-align: center;
+  }
+  .profile-text h2,
+  .profile-text p {
+    text-align: left; /* 내부 텍스트는 왼쪽 정렬 유지 */
+  }
+  .profile-text hr {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-photo {
+    width: 200px;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 모바일에서는 1열로 표시 */
+  }
+
+  /* 모바일에서 #toggle-darkmode는 이미 전역 스타일로 정의되어 있으므로,
+     특별한 변경이 없다면 여기에 추가할 필요 없음.
+     만약 모바일에서 nav의 레이아웃이 크게 바뀐다면, 이 버튼의 위치도 조정 필요. */
+}

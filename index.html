@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plot Decode</title>
+  <link rel="stylesheet" href="Plotdecode.css" />
+  <!-- Font Awesome 아이콘 (보안 아이콘 사용 위해) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- 상단 고정 헤더 -->
+  <header>
+    <h1>Plot Decode</h1>
+  </header>
+
+  <!-- 우측 메뉴 -->
+  <nav>
+    <h2>메뉴</h2>
+    <ul>
+      <li><a href="#home">Welcome</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#guestbook">Guestbook</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- === 뮤직 플레이어 시작 (개선된 버전) === -->
+    <div id="music-player">
+      <p id="song-title">곡 제목</p>
+      <audio id="audio-player" src=""></audio>
+
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+      <div class="time-container">
+        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+      </div>
+
+      <div class="music-controls">
+        <button id="prev-song" title="이전 곡">
+          <svg viewBox="0 0 24 24"><use href="#icon-prev"></use></svg>
+        </button>
+        <button id="play-pause-song" title="재생/일시정지">
+          <svg viewBox="0 0 24 24"><use href="#icon-play"></use></svg>
+        </button>
+        <button id="next-song" title="다음 곡">
+          <svg viewBox="0 0 24 24"><use href="#icon-next"></use></svg>
+        </button>
+        <button id="volume-toggle" title="음소거">
+            <svg viewBox="0 0 24 24"><use href="#icon-volume-high"></use></svg>
+        </button>
+      </div>
+    </div>
+    <!-- === 뮤직 플레이어 끝 === -->
+
+    <button id="toggle-darkmode">다크모드 토글</button>
+  </nav>
+
+  <!-- 본문 콘텐츠 -->
+  <div class="content">
+    <!-- 홈 섹션 -->
+    <section id="home">
+      <div class="section-wrapper">
+        <div class="text-align-container">
+          <h1>Welcome!</h1>
+          <p>안녕하세요. 방문해주셔서 감사합니다.</p>
+          <p>Hello, thank you for visiting.</p>
+          <p>이곳은 꿈을 위해 준비하는 과정을 기록합니다.</p>
+          <p>This is a record of the process of preparing for my dream.</p><br><br>
+          <h2>"몰아붙이는 파도는 나를 더 날카롭게 깎는다."</h2>
+          <h2>"The surging waves sharpen me."</h2>
+        </div>
+        <div class="pado-image">
+          <img src="img/파도.jpg" alt="파도이미지" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 프로필 섹션 -->
+    <section id="profile">
+      <div class="section-wrapper profile-flex">
+        <div class="profile-text">
+          <h2>Profile</h2>
+          <p>"경험을 두려워하지 않고, 그 과정을 통해 성장하며 혼자가 아닌 함께 가겠습니다."</p>
+          <hr />
+          <p>박석현</p>
+          <p>두원공과대학교 컴퓨터공학과</p>
+          <p>Tel. 010 9238 0000</p>
+          <p>e-mail : rss071272 at gmail.com</p>
+          <hr />
+          <h2>경력</h2>
+          <p>육군 25사단 정보보안담당관</p>
+          <p>Army 25th Division Information Security Officer</p>
+          <p>은평메디텍고등학교 의료전자기기과</p>
+          <p>Eunpyeong Meditech High School Medical Electronics Department</p>
+          <hr />
+          <h2>자격</h2>
+          <p>의료전자기능사</p>
+          <p>Medical Electronics Technician</p>
+          <p>정보저리산업기사:예정</p>
+          <p>Information Security Technician: Expected</p>
+          <p>정보보호산업기사:예정</p>
+          <p>Information Security Technician: Expected</p>
+          <p>CISSP:예정</p>
+          <p>CISSP: Expected</p>
+          <hr />
+          <h2>장점</h2>
+          <p>문제 해결을 위한 집중력 / 협업을 위한 소통 능력 / 배움을 통해 성장하려는 욕구</p>
+        </div>
+        <div class="profile-photo">
+          <img src="img/프로필.jpg" alt="증명사진" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 기술 스택 섹션 -->
+    <section id="skills">
+      <div class="section-wrapper">
+        <div class="text-align-container">
+          <h2>Skills</h2>
+        </div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-item">
+              <span class="skill-name">C#</span>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-skill-level="20%"></div>
+              </div>
+              <span class="skill-level-text">20%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-skill-level="10%"></div>
+              </div>
+              <span class="skill-level-text">10%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-skill-level="10%"></div>
+              </div>
+              <span class="skill-level-text">10%</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Databases</h3>
+            <div class="skill-item">
+              <span class="skill-name">MySQL</span>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-skill-level="40%"></div>
+              </div>
+              <span class="skill-level-text">40%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">MongoDB</span>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-skill-level="25%"></div>
+              </div>
+              <span class="skill-level-text">25%</span>
+            </div>
+          </div>
+
+          <!-- === 보안 역량 영역 (가로형 디자인 적용) === -->
+          <div class="skill-category security-skills-horizontal">
+            <h3>Security Competencies</h3>
+            <div class="security-skill-card-horizontal">
+              <div class="security-skill-icon-horizontal">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="security-skill-content-horizontal">
+                <h4>Network Security</h4>
+                <div class="competency-level-horizontal" data-level="4">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                </div>
+                <p>방화벽, IDS/IPS 운영 및 네트워크 트래픽 분석 경험. 보안 아키텍처 설계 및 취약점 진단.</p>
+              </div>
+            </div>
+            <div class="security-skill-card-horizontal">
+              <div class="security-skill-icon-horizontal">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="security-skill-content-horizontal">
+                <h4>Web Application Security</h4>
+                 <div class="competency-level-horizontal" data-level="4">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                </div>
+                <p>OWASP Top 10 기반의 웹 취약점 분석 및 대응. 시큐어 코딩 가이드라인 적용 및 모의 해킹 경험.</p>
+              </div>
+            </div>
+            <div class="security-skill-card-horizontal">
+              <div class="security-skill-icon-horizontal">
+                <i class="fas fa-key"></i>
+              </div>
+              <div class="security-skill-content-horizontal">
+                <h4>Cryptography</h4>
+                <div class="competency-level-horizontal" data-level="3">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </div>
+                <p>암호화 알고리즘의 이해 및 적용. 데이터 암호화 및 키 관리 시스템에 대한 지식 보유.</p>
+              </div>
+            </div>
+            <div class="security-skill-card-horizontal">
+              <div class="security-skill-icon-horizontal">
+                <i class="fas fa-user-secret"></i>
+              </div>
+              <div class="security-skill-content-horizontal">
+                <h4>Incident Response</h4>
+                <div class="competency-level-horizontal" data-level="3">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </div>
+                <p>보안 사고 발생 시 초기 대응 및 분석, 보고서 작성 경험. 침해사고 분석 도구 활용.</p>
+              </div>
+            </div>
+            <!-- 필요에 따라 보안 역량 카드 추가 -->
+          </div>
+          <!-- === 보안 역량 영역 끝 === -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 포트폴리오 섹션 -->
+    <section id="portfolio">
+      <div class="section-wrapper">
+        <div class="text-align-container">
+          <h2>포트폴리오</h2>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="thumbnail/사진1.jpg" alt="게시물1" />
+            <p>과제 제목 1</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="thumbnail/사진2.jpg" alt="게시물2" />
+            <p>과제 제목 2</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="thumbnail/사진3.jpg" alt="게시물3" />
+            <p>과제 제목 3</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="thumbnail/사진4.jpg" alt="게시물4" />
+            <p>과제 제목 4</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="thumbnail/사진5.jpg" alt="게시물5" />
+            <p>과제 제목 5</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="thumbnail/사진6.jpg" alt="게시물6" />
+            <p>과제 제목 6</p>
+          </div>
+        </div>
+        <div class="pagination">
+          <button>«</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>»</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 방명록 섹션 -->
+    <section id="guestbook">
+        <div class="section-wrapper">
+            <div class="text-align-container">
+                <h2>Guestbook</h2>
+                <p>자유롭게 메시지를 남겨주세요!</p>
+            </div>
+            <div class="guestbook-form-container">
+                <form id="guestbook-form">
+                    <div class="form-group">
+                        <label for="guest-name">이름:</label>
+                        <input type="text" id="guest-name" name="guestName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guest-message">메시지:</label>
+                        <textarea id="guest-message" name="guestMessage" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> 남기기
+                    </button>
+                </form>
+            </div>
+
+            <div class="guestbook-entries">
+                <h3>남겨주신 글들</h3>
+                <div class="guestbook-entry">
+                    <div class="entry-header">
+                        <strong class="entry-name">방문자 A</strong>
+                        <span class="entry-date">2023-10-27</span>
+                    </div>
+                    <p class="entry-message">홈페이지 멋지네요! 잘 보고 갑니다.</p>
+                </div>
+                <div class="guestbook-entry">
+                    <div class="entry-header">
+                        <strong class="entry-name">개발자 B</strong>
+                        <span class="entry-date">2023-10-26</span>
+                    </div>
+                    <p class="entry-message">기술 스택이 인상적입니다. 화이팅!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의 섹션 -->
+    <section id="contact">
+      <div class="section-wrapper">
+        <div class="text-align-container">
+          <h2>문의</h2>
+          <form action="https://formspree.io/f/your_form_id" method="POST">
+            <label for="name">이름:</label><br />
+            <input type="text" id="name" name="name" required /><br />
+            <label for="message">메시지:</label><br />
+            <textarea id="message" name="message" rows="5" required></textarea><br />
+            <button type="submit">보내기</button>
+          </form>
+          <p>※ 메시지는 작성자와 관리자(나)만 볼 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SVG 아이콘 정의 (기존과 동일) -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></symbol>
+      <symbol id="icon-prev" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></symbol>
+      <symbol id="icon-next" viewBox="0 0 24 24"><path d="M16 6h2v12h-2zm-3.5 6l-8.5 6V6z"/></symbol>
+      <symbol id="icon-volume-high" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></symbol>
+      <symbol id="icon-volume-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- 스크립트 (기존 스크립트와 동일) -->
+  <script>
+    // 다크모드 스크립트
+    const toggle = document.getElementById('toggle-darkmode');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+
+    // === 뮤직 플레이어 스크립트 ===
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseBtn = document.getElementById('play-pause-song');
+    const playIcon = playPauseBtn.querySelector('use');
+    const prevBtn = document.getElementById('prev-song');
+    const nextBtn = document.getElementById('next-song');
+    const songTitleElement = document.getElementById('song-title');
+    const progressBarContainer = document.querySelector('.progress-container');
+    const progressBar = document.querySelector('.progress');
+    const currentTimeElement = document.getElementById('current-time');
+    const durationElement = document.getElementById('duration');
+    const volumeToggleBtn = document.getElementById('volume-toggle');
+    const volumeIcon = volumeToggleBtn.querySelector('use');
+
+    const songs = [
+      { title: "Aves - Funny Thing About Love", src: "music/Aves - Funny Thing About Love.mp3" },
+      { title: "Echo LaRoux - Sunrise", src: "music/Echo LaRoux - Sunrise.mp3" },
+      { title: "The Delegates - Confusion", src: "music/The Delegates - Confusion.mp3" },
+      { title: "Theo Brown - My Love", src: "music/Theo Brown - My Love.mp3" }
+    ];
+    let currentSongIndex = 0;
+    let isPlaying = false;
+    audioPlayer.volume = 0.3;
+
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+    function loadSong(song) {
+      songTitleElement.textContent = song.title;
+      audioPlayer.src = song.src;
+      audioPlayer.onloadedmetadata = () => {
+        durationElement.textContent = formatTime(audioPlayer.duration);
+        progressBar.style.width = '0%';
+        currentTimeElement.textContent = formatTime(0);
+      };
+    }
+    function playSong() {
+      isPlaying = true;
+      audioPlayer.play()
+        .then(() => {
+          playIcon.setAttribute('href', '#icon-pause');
+          playPauseBtn.setAttribute('title', '일시정지');
+        })
+        .catch(error => {
+          console.log("Playback error: ", error);
+          isPlaying = false;
+          playIcon.setAttribute('href', '#icon-play');
+          playPauseBtn.setAttribute('title', '재생');
+        });
+    }
+    function pauseSong() {
+      isPlaying = false;
+      audioPlayer.pause();
+      playIcon.setAttribute('href', '#icon-play');
+      playPauseBtn.setAttribute('title', '재생');
+    }
+    function prevSong() {
+      currentSongIndex--;
+      if (currentSongIndex < 0) currentSongIndex = songs.length - 1;
+      loadSong(songs[currentSongIndex]);
+      if (isPlaying) playSong();
+    }
+    function nextSong() {
+      currentSongIndex++;
+      if (currentSongIndex >= songs.length) currentSongIndex = 0;
+      loadSong(songs[currentSongIndex]);
+      if (isPlaying) playSong();
+    }
+    function updateProgressBar() {
+      if (audioPlayer.duration) {
+        const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+        currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
+      }
+    }
+    function setProgress(e) {
+      const width = this.clientWidth;
+      const clickX = e.offsetX;
+      const duration = audioPlayer.duration;
+      if (duration) audioPlayer.currentTime = (clickX / width) * duration;
+    }
+    function toggleVolume() {
+        audioPlayer.muted = !audioPlayer.muted;
+        if (audioPlayer.muted) {
+            volumeIcon.setAttribute('href', '#icon-volume-off');
+            volumeToggleBtn.setAttribute('title', '음소거 해제');
+        } else {
+            volumeIcon.setAttribute('href', '#icon-volume-high');
+            volumeToggleBtn.setAttribute('title', '음소거');
+            if (audioPlayer.volume === 0 && !audioPlayer.muted) audioPlayer.volume = 0.3;
+        }
+    }
+    playPauseBtn.addEventListener('click', () => { if (isPlaying) pauseSong(); else playSong(); });
+    prevBtn.addEventListener('click', prevSong);
+    nextBtn.addEventListener('click', nextSong);
+    audioPlayer.addEventListener('timeupdate', updateProgressBar);
+    audioPlayer.addEventListener('ended', nextSong);
+    progressBarContainer.addEventListener('click', setProgress);
+    volumeToggleBtn.addEventListener('click', toggleVolume);
+    loadSong(songs[currentSongIndex]);
+    if (audioPlayer.muted || audioPlayer.volume === 0) {
+        volumeIcon.setAttribute('href', '#icon-volume-off');
+        volumeToggleBtn.setAttribute('title', '음소거 해제');
+    } else {
+        volumeIcon.setAttribute('href', '#icon-volume-high');
+        volumeToggleBtn.setAttribute('title', '음소거');
+    }
+    // === 뮤직 플레이어 스크립트 끝 ===
+
+
+    // === 기술 스택 막대그래프 애니메이션 스크립트 ===
+    function animateSkillBars() {
+      const skillBars = document.querySelectorAll('#skills .skill-bar'); // 일반 스킬바
+      skillBars.forEach(bar => {
+        const level = bar.getAttribute('data-skill-level');
+        bar.style.width = '0%';
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setTimeout(() => { bar.style.width = level; }, 200);
+              observer.unobserve(bar);
+            }
+          });
+        }, { threshold: 0.5 });
+        observer.observe(bar);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', animateSkillBars);
+
+
+    // === 방명록 폼 제출 스크립트 ===
+    const guestbookForm = document.getElementById('guestbook-form');
+    if (guestbookForm) {
+        guestbookForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('guest-name').value;
+            const message = document.getElementById('guest-message').value;
+            const entriesContainer = document.querySelector('.guestbook-entries');
+
+            if (name && message && entriesContainer) {
+                const newEntry = document.createElement('div');
+                newEntry.classList.add('guestbook-entry');
+                const entryHeader = document.createElement('div');
+                entryHeader.classList.add('entry-header');
+                const entryName = document.createElement('strong');
+                entryName.classList.add('entry-name');
+                entryName.textContent = name;
+                const entryDate = document.createElement('span');
+                entryDate.classList.add('entry-date');
+                entryDate.textContent = new Date().toISOString().split('T')[0];
+                entryHeader.appendChild(entryName);
+                entryHeader.appendChild(entryDate);
+                const entryMessage = document.createElement('p');
+                entryMessage.classList.add('entry-message');
+                entryMessage.textContent = message;
+                newEntry.appendChild(entryHeader);
+                newEntry.appendChild(entryMessage);
+                if (entriesContainer.children.length > 1) {
+                    entriesContainer.insertBefore(newEntry, entriesContainer.children[1]);
+                } else {
+                    entriesContainer.appendChild(newEntry);
+                }
+                guestbookForm.reset();
+            }
+        });
+    }
+  </script>
+</body>
+</html>
